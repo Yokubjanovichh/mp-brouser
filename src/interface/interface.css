@@ -1,0 +1,176 @@
+/* ========== INPUT ========== */
+
+.input {
+  width: 100%;
+  height: 45px;
+  border-radius: 5px;
+  background: #fff;
+  padding: 0 10px;
+  border: 1px solid #e5e7eb;
+  transition: all 0.1s ease;
+}
+
+.input:hover {
+  border: 1px solid #16a382;
+}
+
+.input:focus {
+  border: 1px solid #16a382;
+}
+
+/* ========== BUTTON ========== */
+.button {
+  width: 100%;
+  height: 45px;
+  border-radius: 5px;
+  background: #16a382;
+  padding: 0 10px;
+  transition: all 0.1s ease;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: #1acea4;
+  border: 1px solid #1acea4;
+}
+
+.button:active {
+  background: #2e7b60;
+  border: 1px solid #2e7b60;
+}
+
+/* ========== CHECKBOX ========== */
+.checkbox {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkbox span {
+  width: 18px;
+  height: 18px;
+  border-radius: 3px;
+  border: 1px solid #e5e7eb;
+}
+
+.checkbox > input[type="checkbox"] {
+  display: none;
+}
+
+.checkbox > svg {
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 13px;
+}
+
+.checkbox:hover > span {
+  border: 1px solid #16a382;
+}
+
+.checkbox:hover > svg {
+  opacity: 0.1;
+}
+
+.checkbox > input[type="checkbox"]:checked + span {
+  border: 1px solid #16a382;
+}
+
+.checkbox > input[type="checkbox"]:checked ~ svg {
+  opacity: 1;
+  color: #2e7b60;
+}
+
+/* ========== RADIO ========== */
+.radio {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.1s ease;
+  cursor: pointer;
+}
+
+.radio > span {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  border: 0.12rem solid #e5e7eb;
+  border-radius: 50%;
+  transition: all 0.1s ease;
+}
+
+.radio:hover > span {
+  border: 0.12rem solid #16a382;
+}
+
+.radio input[type="radio"]:checked + span {
+  border: 0.12rem solid #16a382;
+}
+
+.radio input[type="radio"]:checked ~ span::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  background: #16a382;
+}
+
+/* ============ SWITCH ============  */
+.switch {
+  position: relative;
+  width: 36px;
+  height: 20px;
+  background: #e5e7eb;
+  border-radius: 10px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.switch.active {
+  background: #16a382;
+}
+
+.switch > span {
+  position: absolute;
+  top: 50%;
+  left: 2px;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #fff;
+  transition: all 0.15s;
+  z-index: 1;
+}
+
+.switch > input[type="checkbox"]:checked + span {
+  left: 50%;
+}
+
+.switch > i {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #16a382;
+  opacity: 0;
+  transition: all 0.1s;
+}
+
+.switch > input[type="checkbox"]:checked ~ i {
+  background: #16a382;
+  opacity: 1;
+}

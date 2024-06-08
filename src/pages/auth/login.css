@@ -1,0 +1,196 @@
+.login-page {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.login-page::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: #fff;
+}
+
+.login-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background: #2e7b60;
+}
+
+.login__form {
+  position: relative;
+  z-index: 99;
+  max-width: 460px;
+  width: 100%;
+  padding: 30px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.login__title {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 10px;
+}
+
+.login__title > p {
+  color: #000;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.login__title > i {
+  flex: 1;
+  height: 1px;
+  background: #e5e7eb;
+  position: relative;
+}
+
+.login__title > i::after {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #e5e7eb;
+}
+
+.login__title > i::before {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #e5e7eb;
+  right: 0;
+}
+
+.login__error {
+  color: #cb111c;
+  font-size: 14px;
+  font-weight: 500;
+  opacity: 0;
+  transition: all 0.1s ease;
+}
+
+.login__error.active {
+  opacity: 1;
+}
+
+.login__password {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.login__password button {
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  z-index: 99;
+  background: #fff;
+  padding: 10px;
+}
+
+.login__checkbox {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 0;
+}
+
+.login__checkbox label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.login__checkbox label span {
+  color: #565555;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.login__checkbox a {
+  color: #16a382;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.login__telegram {
+  color: #565555;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 150%;
+}
+
+.login__telegram a {
+  color: #16a382;
+}
+
+/* ======== Sign Up ======== */
+.login__signup {
+  position: relative;
+  z-index: 99;
+  max-width: 460px;
+  width: 100%;
+  padding: 40px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.login__signup a {
+  width: 100%;
+  height: 45px;
+  border-radius: 5px;
+  border: 1px solid #16a382;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #16a382;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.login__signup p {
+  color: #565555;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 150%;
+}

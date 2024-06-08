@@ -1,0 +1,501 @@
+/* =========== algorithm ============= */
+.algorithm {
+  width: 650px;
+  padding: 30px;
+  position: relative;
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  transform: translateX(130%);
+  transition: all 0.2s cubic-bezier(0.57, -0.09, 0.28, 0.9);
+}
+
+.algorithm.active {
+  transform: translateX(0);
+}
+
+.close__modal {
+  position: absolute;
+  top: 30px;
+  left: -60px;
+  width: 40px;
+  height: 40px;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  color: #565555;
+}
+
+.algorithm__header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.algorithm__header > p {
+  font-size: 16px;
+  font-weight: 500;
+  color: #191919;
+}
+
+.algorithm__header > span {
+  position: relative;
+  flex: 1;
+  height: 2px;
+  background: #e5e7eb;
+}
+
+.algorithm__header > span::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #e5e7eb;
+}
+
+.algorithm__header > span::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #e5e7eb;
+}
+
+.algorithm__select {
+  position: relative;
+  width: 100%;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  border: 1px solid #e5e7eb;
+  background: #f5f5f5;
+  gap: 5px;
+}
+
+.algorithm__select > button {
+  position: relative;
+  width: calc((100% - 5px) / 2);
+  height: 100%;
+  background: transparent;
+  border: none;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  color: #6b7280;
+  font-size: 12px;
+  font-weight: 500;
+  z-index: 1;
+}
+
+.algorithm__select {
+  --active-step: 0;
+}
+
+.algorithm__select svg {
+  font-size: 20px;
+}
+
+.algorithm__select::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translate(calc(var(--active-step) * 100%), -50%);
+  transition: transform 0.1s ease;
+  width: calc(50% - 5px);
+  height: calc(100% - 8px);
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
+}
+
+.algorithm__body {
+  width: 100%;
+  height: 400px;
+  padding: 30px 0;
+  --step: 0;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap-reverse;
+  gap: 30px;
+  overflow: hidden;
+}
+
+.algorithm__body > div {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  transition: all 0.15s ease;
+  transform: translate(calc(var(--step) * (100% + 30px)), 0);
+}
+
+.algorithm__cart {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 30px;
+}
+
+.algorithm__cart > label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.algorithm__action {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.algorithm__action > :where(input, label, div) {
+  width: calc((100% - 40px) / 3);
+  height: 40px;
+  border: 1px solid #16a382;
+  border-radius: 5px;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #16a382;
+  cursor: pointer;
+  transition: all 0.09s ease;
+}
+
+.algorithm__action > :where(input, label):hover {
+  border: 2px solid #16a382;
+}
+
+.algorithm__action > :where(input, label):active {
+  border: 1px solid #16a382;
+}
+
+.algorithm__excel__file {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  border: none;
+  color: #191919;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.algorithm__excel__file > span {
+  font-size: 14px;
+  inline-size: calc(100% - 20px);
+}
+
+.algorithm__excel__file > button {
+  width: 20px;
+  background: transparent;
+  cursor: pointer;
+  font-size: 19px;
+  border: none;
+  color: #b0b0b0;
+  display: flex;
+}
+
+.algorithm__excel__file > button:hover {
+  color: #16a382;
+}
+
+.algorithm__action__button {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  gap: 20px;
+  flex: 1;
+}
+
+.algorithm__action__button > button {
+  width: calc((100% - 20px) / 2);
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  background: transparent;
+  color: #16a382;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1px solid #16a382;
+}
+
+.algorithm__action__button > button:disabled {
+  background: #e5e7eb;
+  color: #b0b0b0;
+  border: 1px solid #e5e7eb;
+  cursor: not-allowed;
+}
+
+/* -------- algorithm__buy ------ */
+.algorithm__buy {
+  width: 100%;
+  display: flex;
+  gap: 0 30px;
+  flex-wrap: wrap;
+}
+
+.algorithm__buy__left {
+  width: calc(65% - 30px);
+  background: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 20px;
+}
+
+.algorithm__buy__right {
+  width: 35%;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+}
+
+.algorithm__buy__select {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 40px;
+}
+
+.algorithm__buy__select label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.algorithm__buy__select label > span {
+  font-size: 12px;
+  color: #374151;
+}
+
+.algorithm__buy__select label div {
+  width: 15px;
+  height: 15px;
+  border: 2px solid #16a382;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+}
+
+.algorithm__buy__select label input:checked + span {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #16a382;
+}
+
+.algorithm__buy__select__group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.algorithm__buy__select__group > span {
+  font-size: 12px;
+  color: #374151;
+}
+
+.algorithm__buy__select__group > button {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #16a382;
+  border-radius: 5px;
+  background: transparent;
+  font-size: 14px;
+  color: #16a382;
+}
+.algorithm__buy__select__group > button:active {
+  border: 2px solid #16a382;
+}
+
+.algorithm__buy__select__quantity {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.algorithm__buy__select__quantity > p {
+  font-size: 12px;
+  color: #374151;
+}
+
+.algorithm__buy__select__quantity > div {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.algorithm__buy__select__quantity > div input {
+  flex: 1;
+  height: 40px;
+  border: 1px solid #16a382;
+  border-radius: 5px;
+  background: transparent;
+  color: #16a382;
+  font-size: 14px;
+  text-align: center;
+  padding: 0 10px;
+}
+
+.algorithm__buy__select__quantity > div div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.algorithm__buy__select__quantity > div div button {
+  display: flex;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: #16a382;
+}
+
+.algorithm__buy__select__quantity > div div button:active {
+  transform: scale(0.9);
+}
+
+.algorithm__buy__right {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  border: none;
+}
+
+.algorithm__buy__right > div {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.algorithm__buy__right > div > span {
+  font-size: 12px;
+  color: #565555;
+}
+
+.algorithm__buy__right > div > i {
+  color: #cb111c;
+  font-style: normal;
+  font-size: 12px;
+}
+
+.algorithm__buy__right > div > p {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.algorithm__buy__right > div > p svg {
+  font-size: 16px;
+}
+
+.algorithm__buy__select__file {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.algorithm__buy__select__file > :where(button, label) {
+  width: calc((100% - 20px) / 2);
+  height: 40px;
+  border: 1px solid #16a382;
+  border-radius: 5px;
+  background: transparent;
+  color: #16a382;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.09s ease;
+}
+
+.algorithm__buy__select__file > :where(button, label):active {
+  border: 2px solid #16a382;
+}
+
+.algorithm__buy__select__file > div {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.algorithm__buy__select__file > div > span {
+  font-size: 12px;
+  color: #374151;
+}
+
+.algorithm__buy__select__file > div button {
+  width: 20px;
+  background: transparent;
+  cursor: pointer;
+  font-size: 19px;
+  border: none;
+  color: #b0b0b0;
+  display: flex;
+}
+
+.algorithm__buy__action {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.algorithm__buy__action > p {
+  color: #91a09a;
+  font-size: 14px;
+}
+
+.algorithm__buy__action > button {
+  width: 250px;
+  height: 40px;
+  background: #16a382;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+}

@@ -1,0 +1,134 @@
+.header {
+  width: 100%;
+  height: 70px;
+  border-bottom: 1px solid #ccc;
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header > .navbar {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.header > .navbar > button {
+  display: flex;
+  align-items: center;
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  font-weight: 500;
+  color: #191919;
+}
+
+.header > .navbar > button[disabled] {
+  position: relative;
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+.header > .navbar > button[disabled]:hover:after {
+  width: 100%;
+  position: absolute;
+  top: 220%;
+  content: 'Функционал скоро появится';
+  color: #fff;
+  background: #333;
+  font-size: 12px;
+  font-weight: 400;
+  padding: 5px;
+  border-radius: 4px;
+  z-index: 99999999;
+}
+
+.header > .navbar > button[disabled]:hover::before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  background: #333;
+  position: absolute;
+  top: 200%;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.header > .navbar a {
+  display: flex;
+  align-items: center;
+  color: #191919;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.header > .navbar > :where(a, button):hover {
+  color: #16a382;
+  transition: all 0.1s ease;
+}
+
+.header > .navbar > :where(a, button):active {
+  color: #2e7b60;
+}
+
+.header > .navbar > :where(a, button):enabled:active svg {
+  transform: translate(2px, -1px);
+  transition: all 0.1s ease;
+}
+
+.navbar__telegram svg {
+  color: #31abeb;
+  font-size: 28px;
+}
+
+.navbar__profile {
+  position: relative;
+}
+
+.navbar__profile > button {
+  font-size: 28px;
+  color: #191919;
+  display: flex;
+  border: none;
+  background: transparent;
+}
+
+.profile__dropdown {
+  position: absolute;
+  top: 150%;
+  right: 0;
+  width: 200px;
+  height: 0;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+  padding: 0;
+  z-index: 999;
+  overflow: hidden;
+  transition: all 0.14s ease;
+  opacity: 0;
+}
+
+.profile__dropdown.active {
+  height: 85px;
+  padding: 8px 0;
+  opacity: 1;
+}
+
+.profile__dropdown > button {
+  width: 100%;
+  height: calc(100% / 2);
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  gap: 5px;
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  color: #191919;
+}
+
+.profile__dropdown > button:hover {
+  color: #16a382;
+}

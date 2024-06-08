@@ -1,0 +1,168 @@
+.home {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  background: #fff;
+  gap: 20px;
+}
+
+.home__left {
+  width: calc(62% - 10px);
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 20px;
+}
+
+.home__left__header {
+  width: 100%;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 10px 10px 0px 0px;
+  background: #f9f9f9;
+  padding: 0 20px;
+}
+
+.home__left__header > div {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.home__left__header > div > button {
+  display: flex;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: #191919;
+  transition: all 0.2s ease;
+}
+
+.home__left__header > div > button:hover {
+  color: #16a382;
+}
+
+.home__left__header > div > button:active {
+  color: #2e7b60;
+}
+
+.home__left__header > div > .home__refresh {
+  color: #16a382;
+}
+
+.home__refresh {
+  animation-name: refresh;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes refresh {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.home__left__header__install {
+  position: relative;
+}
+
+.home__left__header__install > button {
+  display: flex;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: #191919;
+}
+
+.home__left__header__install > button:hover {
+  color: #16a382;
+}
+
+.home__left__header__install > button:active {
+  color: #2e7b60;
+}
+
+.home__left__header__install__methods {
+  width: 100%;
+  position: absolute;
+  top: 40px;
+  left: -20px;
+  z-index: 1000;
+  width: 300px;
+  height: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  background: #fff;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+  padding: 0 20px;
+  border-radius: 5px;
+  gap: 10px;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.home__left__header__install__methods.active {
+  height: 130px;
+  padding: 20px;
+}
+
+.home__left__header__install__methods label {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.home__left__header__install__methods label span {
+  color: #191919;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.home__left__header__install__methods button {
+  width: 90px;
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid #16a382;
+  background: transparent;
+  color: #16a382;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.home__left__header__install__methods button:hover {
+  background: #16a382;
+  color: #fff;
+}
+
+.home__left__header__install__methods button:active {
+  background: #2e7b60;
+}
+
+.home__left__header__install__methods button:focus {
+  outline: none;
+}
+
+.home__left__body {
+  width: 100%;
+}
+
+.home__right {
+  width: calc(38% - 10px);
+  height: 100%;
+}

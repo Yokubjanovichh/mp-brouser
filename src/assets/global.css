@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  overscroll-behavior: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  letter-spacing: 0.023rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+
+:where(input, select, textarea) {
+  outline: none;
+  border: 1px solid #e5e7eb;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+:where(
+    button,
+    input[type="submit"],
+    input[type="reset"],
+    input[type="button"],
+    input[type="radio"],
+    input[type="checkbox"]
+  ) {
+  cursor: pointer;
+}
+
+:selection {
+  border: none;
+}
+
+.modal {
+  position: fixed;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -9999999;
+  backdrop-filter: blur(0.09rem);
+  background: #3333;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 80px 30px;
+  transition: all 0.1s ease;
+  z-index: -99999;
+  gap: 30px;
+}
+
+.modal.active {
+  z-index: 9999999;
+}
+
+.input {
+  border: 1px solid #e5e7eb;
+  border-radius: 5px;
+  background: #fff;
+  padding: 0 10px;
+}
+
+.input:hover {
+  border: 1px solid #16a382;
+}
+
+.input:focus {
+  border: 1px solid #16a382;
+}

@@ -1,0 +1,782 @@
+.profiles {
+  width: 100%;
+  height: calc(100vh - 175px);
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 20px;
+  background: #fff;
+}
+
+.profiles__header {
+  width: 100%;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 0 20px;
+}
+
+.profiles__header > button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  color: #565555;
+  font-size: 16px;
+  font-weight: 500;
+  background: transparent;
+  border: none;
+}
+
+.profiles__header__select {
+  position: relative;
+  flex: 1;
+  height: 30px;
+}
+
+.profiles__header__select > label {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  border-radius: 5px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+}
+
+.profiles__header__select > label:focus-within {
+  border: 1px solid #16a382;
+}
+
+.profiles__header__select > label input {
+  flex: 1;
+  height: 100%;
+  border: none;
+  background: transparent;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.profiles__header__select > label input::selection {
+  background: transparent;
+}
+
+.profiles__header__select > label button {
+  display: flex;
+  color: #16a382;
+}
+
+.profiles__header__select__list {
+  position: absolute;
+  top: calc(100% + 2px);
+  left: 0;
+  z-index: 999;
+  background: #fff;
+  box-shadow: #0000001a 0px 20px 25px -5px, #0000000a 0px 10px 10px -5px;
+  width: 100%;
+  height: 0;
+  list-style: none;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.profiles__header__select__list.active {
+  height: 140px;
+}
+
+.profiles__header__select__list > li {
+  width: 100%;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  cursor: pointer;
+  border-bottom: 1px solid #e5e7eb9e;
+  padding: 0 10px;
+  color: #191919c7;
+  transition: all 0.1s ease;
+}
+
+.profiles__header__select__list > :last-child {
+  border-bottom: none;
+}
+
+.profiles__header__select__list > li.active {
+  background: #f1f1f1 !important;
+  color: #191919;
+}
+
+.profiles__header__select__list > li:hover {
+  background: #f9f9f9;
+  color: #191919;
+}
+
+.profiles__header__select__list > li span {
+  font-size: 12px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  letter-spacing: normal;
+}
+
+.profiles__header > label {
+  width: 240px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  border-radius: 5px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  gap: 8px;
+}
+
+.profiles__header > label:focus-within {
+  border: 1px solid #16a382;
+}
+
+.profiles__header > label input {
+  flex: 1;
+  height: 100%;
+  border: none;
+  background: transparent;
+}
+
+.profiles__header > label button {
+  display: flex;
+  color: #16a382;
+  background: transparent;
+  border: none;
+  font-size: 14px;
+}
+
+/* ============ Profiles Table ============  */
+.profiles__list {
+  width: 100%;
+  height: calc(100% - 65px);
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  list-style: none;
+  border-radius: 5px;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.profiles__list::-webkit-scrollbar {
+  width: 6px;
+  background: transparent;
+}
+
+.profiles__list::-webkit-scrollbar-thumb {
+  background: #d9d9d9;
+  border-radius: 3px;
+}
+
+.profiles__list__item {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.profiles__list__item.active {
+  box-shadow: #0000001a 0px 20px 25px -5px, #0000000a 0px 10px 10px -5px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 0 0 15px 15px;
+  margin-bottom: 20px;
+}
+
+.profiles__list__item__header {
+  width: 100%;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  gap: 30px;
+  transition: all 0.2s ease;
+}
+
+.profiles__list__item.active > :first-child {
+  background: #2e7b60;
+}
+
+.profiles__list__item.active > :first-child * {
+  color: #fff;
+}
+
+.profiles__list__item__header:hover {
+  background: #f9f9f9;
+}
+
+.profiles__list__item__header > p {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.profiles__list__item__header__ac {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.profiles__list__item__header__ac > button {
+  display: flex;
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  color: #191919;
+}
+
+.profiles__list__item__header__ac > button:hover {
+  color: #16a382;
+}
+
+.profiles__list__item__header__ac button:active {
+  color: #2e7b60;
+}
+
+.profiles__list__item_recommendation {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  border-right: 1px solid #e5e7eb;
+  padding-right: 30px;
+}
+
+.profiles__list__item_recommendation > div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.profiles__list__item_recommendation span {
+  color: #0d6149;
+  cursor: pointer;
+  font-size: 10px;
+  font-weight: 300;
+}
+
+.profiles__list__item_recommendation button {
+  display: flex;
+  border: none;
+  color: #191919;
+  font-size: 12px;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.1s ease;
+}
+
+.profiles__list__item_recommendation button:hover {
+  transform: scale(1.2);
+}
+
+.profiles__list__item_hashtag {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  border-right: 1px solid #e5e7eb;
+  padding-right: 30px;
+}
+
+.profiles__list__item_hashtag > span {
+  font-size: 10px;
+  font-weight: 300;
+  color: #0d6149;
+}
+
+/* +++++++++ profile list item body +++++++++ */
+.profiles__list__item__body {
+  width: 100%;
+  height: 0px;
+  padding: 0 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  overflow: hidden;
+  transition: all 0.15s ease;
+}
+
+.profiles__list__item__body.active {
+  height: 145px;
+  padding: 12px 20px;
+  border-bottom: none;
+}
+
+.profiles__list__item__body > div {
+  width: calc((100% - 80px) / 3);
+  height: 120px;
+}
+
+.profiles__list__item__body__dr {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 5px 15px;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.profiles__list__item__body__dr::-webkit-scrollbar {
+  width: 6px;
+  background: transparent;
+}
+
+.profiles__list__item__body__dr::-webkit-scrollbar-thumb {
+  background: #d9d9d9;
+  border-radius: 3px;
+}
+
+.profiles__list__item__body__dr > p {
+  position: sticky;
+  top: 0;
+  inline-size: 100%;
+  font-size: 14px;
+  color: #191919;
+  font-weight: 500;
+  padding-bottom: 10px;
+  background-color: #fff;
+  z-index: 1;
+}
+
+.profiles__list__item__body__dr > span {
+  width: calc((100% - 30px) / 3);
+  font-size: 14px;
+  color: #565555;
+}
+
+.profiles__list__item__body__ac {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.profiles__list__item__body__ac > p {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.profiles__list__item__body__ac i {
+  font-size: 14px;
+  color: #fdd408;
+  font-style: normal;
+}
+
+.profiles__list__item__body__ac > div {
+  width: 100%;
+  display: flex;
+  gap: 30px;
+}
+
+.profiles__list__item__body__ac > div > :first-child {
+  flex: 1;
+  height: 30px;
+  border-radius: 20px;
+  border: 1px solid #e5e7eb;
+  background: transparent;
+  color: #16a382;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.1s ease;
+}
+
+.profiles__list__item__body__ac > div > :first-child:hover {
+  border-color: #16a382;
+}
+
+.profiles__list__item__body__ac > div > :first-child:active {
+  background: #2e7b60;
+  color: #fff;
+}
+
+.profiles__list__item__body__ac > div > :last-child {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  border: none;
+  font-size: 30px;
+  color: #d9d9d9;
+  transition: all 0.1s ease;
+}
+
+.profiles__list__item__body__ac > div > :last-child:hover {
+  color: #16a382;
+}
+
+.profiles__list__item__body__ac > div > :last-child:active {
+  color: #2e7b60;
+}
+
+/* ============ Add Hashtag Modal ============ */
+
+.centr.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+}
+
+.centr.modal.active {
+  opacity: 1;
+}
+
+.add_hashtag {
+  position: relative;
+  max-width: 500px;
+  width: 100%;
+  padding: 30px;
+  background: #fff;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.close__modal_hashtag {
+  position: absolute;
+  top: 30px;
+  left: -60px;
+  width: 40px;
+  height: 40px;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  color: #565555;
+}
+
+.add_hashtag__header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.add_hashtag__header > h3 {
+  color: #191919;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.add_hashtag__header > code {
+  position: relative;
+  flex: 1;
+  height: 2px;
+  background: #e5e7eb;
+}
+
+.add_hashtag__header > code::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #e5e7eb;
+}
+
+.add_hashtag__header > code::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #e5e7eb;
+}
+
+.add_hashtag > label {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.add_hashtag > label span {
+  color: #191919;
+  font-size: 12px;
+  font-weight: 400;
+  padding-left: 5px;
+}
+
+.add_hashtag > label input {
+  width: 100%;
+  height: 40px;
+  padding: 0 10px;
+  border-radius: 5px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+}
+
+.add_hashtag > :last-child {
+  width: 100%;
+  height: 40px;
+  background: #16a382;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 15px;
+  transition: all 0.1s ease;
+}
+
+.add_hashtag > :last-child:hover {
+  background: #2e7b60;
+}
+
+.add_hashtag > :last-child:active {
+  background: #0d6149;
+}
+
+/* ========== DELETE PROFILE MODAL ========== */
+.delete__profile {
+  position: relative;
+  width: 560px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  transform: translateX(125%);
+  transition: all 0.2s ease;
+}
+
+.delete__profile.active {
+  transform: translateX(0);
+}
+
+.close__modal {
+  position: absolute;
+  top: 30px;
+  left: -60px;
+  width: 40px;
+  height: 40px;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.1s ease;
+  color: #565555;
+}
+
+.close__modal:hover {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.close__modal:active {
+  box-shadow: none;
+  transform: scale(0.99);
+}
+
+.delete__profile > div {
+  padding: 30px;
+  border-radius: 5px;
+  background: #fff;
+}
+
+.delete__profile__header {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.delete__profile__header > p {
+  font-size: 16px;
+  font-weight: 500;
+  color: #191919;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.delete__profile__header > p > code {
+  flex: 1;
+  height: 2px;
+  background: #e5e7eb;
+  position: relative;
+}
+
+.delete__profile__header > p > code::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #e5e7eb;
+}
+
+.delete__profile__header > p > code::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #e5e7eb;
+}
+
+.delete__profile__header > i {
+  font-size: 12px;
+  font-style: normal;
+  color: #565555;
+  padding-top: 30px;
+}
+
+.delete__profile__body {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.delete__profile__body > button {
+  width: calc((100% - 60px) / 2);
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid #e5e7eb;
+  background: transparent;
+  color: #16a382;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.1s ease;
+}
+
+.delete__profile__body > :first-child:hover {
+  border-color: #16a382;
+  color: #16a382;
+}
+
+.delete__profile__body > :first-child:active {
+  background: #2e7b60;
+  color: #fff;
+}
+
+.delete__profile__body > :last-child {
+  background: #cb111c;
+  color: #fff;
+  border: none;
+}
+
+.delete__profile__body > :last-child:hover {
+  background: #ff1f2e;
+}
+
+.delete__profile__body > :last-child:active {
+  background: #8c0f17;
+}
+
+/* ============ filter_profiles ============ */
+.filter_profiles {
+  position: relative;
+  width: 600px;
+  padding: 30px;
+  background: #fff;
+  border-radius: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  transform: translateX(125%);
+  transition: all 0.2s ease;
+}
+
+.filter_profiles.active {
+  transform: translateX(0);
+}
+
+.filter_profiles > h3 {
+  inline-size: 100%;
+  color: #191919;
+  font-size: 16px;
+  font-weight: 500;
+  padding-bottom: 10px;
+}
+
+.filter_profiles > label {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.filter_profiles > p {
+  width: 100%;
+  color: #0d6149;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  gap: 7px;
+  padding-top: 10px;
+}
+
+.filter_profiles__btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-top: 30px;
+}
+.filter_profiles__btn > button {
+  width: calc((100% - 10px) / 2);
+  height: 40px;
+  background: transparent;
+  border-radius: 5px;
+}
+
+.filter_profiles__btn > :first-child {
+  border: 1px solid #16a382;
+  color: #191919;
+}
+
+.filter_profiles__btn > :first-child:hover {
+  border: 1px solid #2e7b60;
+}
+
+.filter_profiles__btn > :first-child:active {
+  border: 2px solid #2e7b60;
+}
+
+.filter_profiles__btn > :last-child {
+  background: #16a382;
+  color: #fff;
+  border: none;
+}
+
+.filter_profiles__btn > :last-child:hover {
+  background: #2e7b60;
+}
+
+.filter_profiles__btn > :last-child:active {
+  background: #0d6149;
+}
